@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    					http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- bean definitions here -->
+		<bean name= "User" class="com.ming.day01Spring.User"></bean>
+	<!--day02 CreateObject-->
+		<!--创建方式1 :空参构造创建-->
+		<bean name="CreateObjectUser" class="com.ming.day02CreateObject.CreateObjectUser"></bean>
+		<!-- 创建方式2 :静态工厂创建 -->
+		<bean name="CreateObjectUserFactoryStatic" class="com.ming.day02CreateObject.CreateObjectUserFactory" factory-method="createUser"></bean>
+		<!--创建方式3:实例工厂-->
+		
+		<bean name="CreateObjectUserFactoryTrue" factory-bean="CreateObjectUserFactory" factory-method="createUser1"></bean>
+		<bean name="CreateObjectUserFactory" class="com.ming.day02CreateObject.CreateObjectUserFactory"></bean>
+	<!-- day03 scope-->
+		<bean name="User03ScopeSingleton" class="com.ming.day03Scope.User03Scope"></bean>
+		<bean name="User03ScopePrototype" class="com.ming.day03Scope.User03Scope" scope="prototype"></bean>
+		<bean name="User03InitDestroy" class="com.ming.day03Scope.User03Scope" init-method="init" destroy-method="destroy"></bean>
+	<!-- day04 import 路径为类路径(src里面)如:该配置的ApplicationContext.xml-->
+	<import resource=""/>
+</beans>
