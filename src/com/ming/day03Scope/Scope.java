@@ -5,35 +5,35 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Scope {
-	/*scopeÊôĞÔµÄÈ¡Öµ:
-	 *1.singleton(Ä¬ÈÏ) ±»±íÊ¾ÎªsingletonµÄ¶ÔÏóÔÚÈİÆ÷ÀïÃæÖ»ÓĞÒ»·İÊµÀı 
-	 * Æô¶¯applicationÊ±»á´´½¨
+	/*scopeå±æ€§çš„å–å€¼:
+	 *1.singleton(é»˜è®¤) è¢«è¡¨ç¤ºä¸ºsingletonçš„å¯¹è±¡åœ¨å®¹å™¨é‡Œé¢åªæœ‰ä¸€ä»½å®ä¾‹ 
+	 * å¯åŠ¨applicationæ—¶ä¼šåˆ›å»º
 	 * <bean name="User03ScopeSingleton" class="com.ming.day03Scope.User03Scope"></bean>
 	 * 2.prototype:
-	 * »ñµÃbeanÊ±²Å»á´´½¨
+	 * è·å¾—beanæ—¶æ‰ä¼šåˆ›å»º
 	 * <bean name="User03ScopePrototype" class="com.ming.day03Scope.User03Scope" scope="prototype"></bean>
-	 * 3.request:ÔÚweb»·¾³ÏÂ£¬ÓërequestÉúÃüÖÜÆÚÒ»ÖÂ
-	 * 4.session:ÔÚweb»·¾³ÏÂ£¬Óësession¶ÔÏóÉúÃüÖÜÆÚÒ»ÖÂ
-	 * 5.ÉúÃüÖÜÆÚÊôĞÔ,¿ÉÒÔÅäÖÃÉúÃüÖÜÆÚ³õÊ¼»¯·½·¨ºÍÏú»Ù·½·¨
-	 * ÅäÖÃÒ»¸ö·½·¨×÷ÎªÉúÃüÖÜÆÚµÄÏú»Ù·½·¨springÈİÆ÷ÔÚ¹Ø±Õ²¢Ïú»ÙËùÓĞÈİÆ÷ÖĞµÄ¶ÔÏóÖ®Ç°µ÷ÓÃ
-	 * ³õÊ¼»¯·½·¨:init-method
-	 * Ïú»Ù·½·¨:destory-method
+	 * 3.request:åœ¨webç¯å¢ƒä¸‹ï¼Œä¸requestç”Ÿå‘½å‘¨æœŸä¸€è‡´
+	 * 4.session:åœ¨webç¯å¢ƒä¸‹ï¼Œä¸sessionå¯¹è±¡ç”Ÿå‘½å‘¨æœŸä¸€è‡´
+	 * 5.ç”Ÿå‘½å‘¨æœŸå±æ€§,å¯ä»¥é…ç½®ç”Ÿå‘½å‘¨æœŸåˆå§‹åŒ–æ–¹æ³•å’Œé”€æ¯æ–¹æ³•
+	 * é…ç½®ä¸€ä¸ªæ–¹æ³•ä½œä¸ºç”Ÿå‘½å‘¨æœŸçš„é”€æ¯æ–¹æ³•springå®¹å™¨åœ¨å…³é—­å¹¶é”€æ¯æ‰€æœ‰å®¹å™¨ä¸­çš„å¯¹è±¡ä¹‹å‰è°ƒç”¨
+	 * åˆå§‹åŒ–æ–¹æ³•:init-method
+	 * é”€æ¯æ–¹æ³•:destory-method
 	 * 	<bean name="User03InitDestroy" class="com.ming.day03Scope.User03Scope" init-method="init" destroy-method="destroy"></bean>
 	 * */
 	@Test
 	public void test03Scope() {
-		//µ¥ÀıÊ±(Ä¬ÈÏsingleton):Êä³ö¹¹Ôìº¯ÊıÏÈÔÚÊä³öÊı×Ö£¬Æô¶¯Ê±´´½¨
+		//å•ä¾‹æ—¶(é»˜è®¤singleton):è¾“å‡ºæ„é€ å‡½æ•°å…ˆåœ¨è¾“å‡ºæ•°å­—ï¼Œå¯åŠ¨æ—¶åˆ›å»º
 		ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("ApplicationContext.xml");
-		//Á½ÕßhashcodeÒ»Ñù£¬ÊÇÍ¬Ò»¸ö¶ÔÏó£¬Ä¬ÈÏµÄscopeÎªsingleton
+		//ä¸¤è€…hashcodeä¸€æ ·ï¼Œæ˜¯åŒä¸€ä¸ªå¯¹è±¡ï¼Œé»˜è®¤çš„scopeä¸ºsingleton
 		System.out.println(1);
 		System.out.println(ac.getBean("User03ScopeSingleton"));
 		System.out.println(ac.getBean("User03ScopeSingleton"));
-		//Á½Õßhashcode²»Í¬,ÊÇ²»Í¬µÄ¶ÔÏó£¬scopeµÄÖµÎªprototype
-		//¶àÀûÊ±(prototype:)ÏÈÊä³öÊı×Ö£¬ÔÚÊä³ö2´Î¹¹Ôìº¯Êı£¬»ñÈ¡beanÊ±´´½¨
+		//ä¸¤è€…hashcodeä¸åŒ,æ˜¯ä¸åŒçš„å¯¹è±¡ï¼Œscopeçš„å€¼ä¸ºprototype
+		//å¤šåˆ©æ—¶(prototype:)å…ˆè¾“å‡ºæ•°å­—ï¼Œåœ¨è¾“å‡º2æ¬¡æ„é€ å‡½æ•°ï¼Œè·å–beanæ—¶åˆ›å»º
 		System.out.println(1);
 		System.out.println(ac.getBean("User03ScopePrototype"));
 		System.out.println(ac.getBean("User03ScopePrototype"));
-		//Ê¹ÓÃClassPathXmlApplicationContextµÄ²ÎÊı£¬²»Ê¹ÓÃ½Ó¿Ú²ÎÊı£¬Ô­ÒòÊÇÒòÎª½Ó¿ÚApplicationContextÖĞÃ»ÓĞclose()·½·¨
+		//ä½¿ç”¨ClassPathXmlApplicationContextçš„å‚æ•°ï¼Œä¸ä½¿ç”¨æ¥å£å‚æ•°ï¼ŒåŸå› æ˜¯å› ä¸ºæ¥å£ApplicationContextä¸­æ²¡æœ‰close()æ–¹æ³•
 		ac.close();
 	}
 }	

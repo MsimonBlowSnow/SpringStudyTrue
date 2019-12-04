@@ -1,5 +1,5 @@
 package com.ming.day01Spring;
 
 public class A {
-	//´ó»á´ó·¢Ë¹µÙ·Ò
+	//å¤§ä¼šå¤§å‘æ–¯è’‚èŠ¬
 }

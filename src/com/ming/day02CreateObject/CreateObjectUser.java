@@ -2,10 +2,10 @@ package com.ming.day02CreateObject;
 
 public class CreateObjectUser {
 	static {
-		System.out.println("CreateObjectUser¾²Ì¬´úÂë¿é!");
+		System.out.println("CreateObjectUseré™æ€ä»£ç å—!");
 	}
 	public CreateObjectUser() {
-		System.out.println("CreateObjectUser¿Õ²ÎÊı¹¹Ôì");
+		System.out.println("CreateObjectUserç©ºå‚æ•°æ„é€ ");
 	}
 	@Override
 	public String toString() {

@@ -11,43 +11,43 @@ import org.springframework.core.io.Resource;
 
 public class ApplicationAndBeanFactory {
 	/*BeanFactory:
-	 * ½Ó¿ÚÊÇ×îÔ­Ê¼µÄ½Ó¿Ú£¬¸Ã½Ó¿ÚµÄÊµÏÖÀà£¬¹¦ÄÜ±È½Ïµ¥Ò»
-	*BeanFactory½Ó¿ÚÊµÏÖÈİÆ÷£¬ÌØµãÊÇÃ¿´Î»ñµÃ¶ÔÏóÊ±²Å»á´´½¨¶ÔÏó
-	*	Ê¡ÄÚ´æ(ÒÑ¾­¹ıÊ±ÁË)
+	 * æ¥å£æ˜¯æœ€åŸå§‹çš„æ¥å£ï¼Œè¯¥æ¥å£çš„å®ç°ç±»ï¼ŒåŠŸèƒ½æ¯”è¾ƒå•ä¸€
+	*BeanFactoryæ¥å£å®ç°å®¹å™¨ï¼Œç‰¹ç‚¹æ˜¯æ¯æ¬¡è·å¾—å¯¹è±¡æ—¶æ‰ä¼šåˆ›å»ºå¯¹è±¡
+	*	çœå†…å­˜(å·²ç»è¿‡æ—¶äº†)
 	**/
 	/*ApplicationContext
-	 * 	ÔÚÏÂÃæÒ»ĞĞ´úÂëÖĞ°Ñ¶ÔÏó¶¼´´½¨ÁË
+	 * 	åœ¨ä¸‹é¢ä¸€è¡Œä»£ç ä¸­æŠŠå¯¹è±¡éƒ½åˆ›å»ºäº†
 	 *	ApplicationContext ac = new ClassPathXmlApplicationContext("ApplicationContext.xml"); 	
-	 *  Ã¿´ÎÈİÆ÷µÄÆô¶¯Ê±¾Í»á´´½¨ÅäÖÃµÄËùÓĞ¶ÔÏó
-	 *  Ïà¶ÔÂ·¾¶:´ÓÀàµÄÂ·¾¶ÏÂ¼ÓÔØÅäÖÃÎÄ¼ş:ClassPathXmlApplicationContext(ÊµÏÖÀà)
-	 *  ¾ø¶ÔÂ·¾¶:´ÓÓ²ÅÌÉÏ¼ÓÔØÅäÖÃÎÄ¼ş:FileSystemXmlApplicationContext(ÊµÏÖÀà)
+	 *  æ¯æ¬¡å®¹å™¨çš„å¯åŠ¨æ—¶å°±ä¼šåˆ›å»ºé…ç½®çš„æ‰€æœ‰å¯¹è±¡
+	 *  ç›¸å¯¹è·¯å¾„:ä»ç±»çš„è·¯å¾„ä¸‹åŠ è½½é…ç½®æ–‡ä»¶:ClassPathXmlApplicationContext(å®ç°ç±»)
+	 *  ç»å¯¹è·¯å¾„:ä»ç¡¬ç›˜ä¸ŠåŠ è½½é…ç½®æ–‡ä»¶:FileSystemXmlApplicationContext(å®ç°ç±»)
 	 * */
 	
-	/*×Ü½á:
-	 * 	ÔÚweb¿ª·¢ÖĞÊ¹ÓÃapplicationContext,×ÊÔ´ØÑ·¦µÄÇé¿öÈÕÊ¹ÓÃBeanFactory(ÊÖ»ú¶Ë)
+	/*æ€»ç»“:
+	 * 	åœ¨webå¼€å‘ä¸­ä½¿ç”¨applicationContext,èµ„æºåŒ®ä¹çš„æƒ…å†µæ—¥ä½¿ç”¨BeanFactory(æ‰‹æœºç«¯)
 	 * 
 	 * */
 	@Test
 	public void applicationTest() {
 
-		//BeanFactoryÔÚ»ñÈ¡beanµÄ¶ÔÏóµÄÊ±ºò´´½¨¸Ã¶ÔÏó
-		//¸Ã¶Î´úÂëÊä³öÎª1 ¾²Ì¬´úÂë¿é£¬
+		//BeanFactoryåœ¨è·å–beançš„å¯¹è±¡çš„æ—¶å€™åˆ›å»ºè¯¥å¯¹è±¡
+		//è¯¥æ®µä»£ç è¾“å‡ºä¸º1 é™æ€ä»£ç å—ï¼Œ
 		/*Resource res = new ClassPathResource("ApplicationContext.xml");
 		BeanFactory bf=new XmlBeanFactory(res);
 		System.out.println("1");
-		//»ñÈ¡beanµÄ¶ÔÏóµÄÊ±ºò´´½¨¸Ã¶ÔÏó
+		//è·å–beançš„å¯¹è±¡çš„æ—¶å€™åˆ›å»ºè¯¥å¯¹è±¡
 		User user= (User)bf.getBean("User");
 		*/
 		
 		
-		//»áÊä³ö¾²Ì¬´úÂë¿é£¬ÒòÎªapplicationÃ¿´ÎÈİÆ÷µÄÆô¶¯Ê±¾Í»á´´½¨ÅäÖÃµÄËùÓĞ¶ÔÏó,´´½¨¶ÔÏó¾Í»áÖ´ĞĞ¾²Ì¬´úÂë¿é
-		//¸Ã¶Î´úÂëÊä³öÎª¾²Ì¬´úÂë¿é 1,
+		//ä¼šè¾“å‡ºé™æ€ä»£ç å—ï¼Œå› ä¸ºapplicationæ¯æ¬¡å®¹å™¨çš„å¯åŠ¨æ—¶å°±ä¼šåˆ›å»ºé…ç½®çš„æ‰€æœ‰å¯¹è±¡,åˆ›å»ºå¯¹è±¡å°±ä¼šæ‰§è¡Œé™æ€ä»£ç å—
+		//è¯¥æ®µä»£ç è¾“å‡ºä¸ºé™æ€ä»£ç å— 1,
 		/*
 		  ApplicationContext ac = new ClassPathXmlApplicationContext("ApplicationContext.xml"); 
-		  //²»»áÊä³ö¾²Ì¬´úÂë¿é£¬ÒÑ¾­Ö´ĞĞÁËÒ»´Î
+		  //ä¸ä¼šè¾“å‡ºé™æ€ä»£ç å—ï¼Œå·²ç»æ‰§è¡Œäº†ä¸€æ¬¡
 		   System.out.println("1");
 		  ApplicationContext ac1 = new ClassPathXmlApplicationContext("ApplicationContext.xml");
-		  //Ã¿¸ö1£¬2User¶ÔÏó¶¼²»Í¬£¬2£¬3¶ÔÏóÏàÍ¬ System.out.println(ac.getBean("User").hashCode());
+		  //æ¯ä¸ª1ï¼Œ2Userå¯¹è±¡éƒ½ä¸åŒï¼Œ2ï¼Œ3å¯¹è±¡ç›¸åŒ System.out.println(ac.getBean("User").hashCode());
 		  System.out.println(ac1.getBean("User").hashCode());
 		  System.out.println(ac1.getBean("User").hashCode());
 		 */

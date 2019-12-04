@@ -5,13 +5,13 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class CreateObject01 {
-	/*´´½¨·½Ê½1:¿Õ²Î¹¹Ôì
+	/*åˆ›å»ºæ–¹å¼1:ç©ºå‚æ„é€ 
 	 * <bean id="CreateObjectUser" class="com.ming.day01CreateObject.CreateObjectUser"></bean>
-	 * ´´½¨·½Ê½2:¾²Ì¬¹¤³§·½Ê½
-	 * 	µ÷ÓÃcom.ming.day01CreateObject.CreateObjectUserFactoryµÄcreateUser·½·¨
+	 * åˆ›å»ºæ–¹å¼2:é™æ€å·¥å‚æ–¹å¼
+	 * 	è°ƒç”¨com.ming.day01CreateObject.CreateObjectUserFactoryçš„createUseræ–¹æ³•
 	 * <bean id="CreateObjectUserFactory" class="com.ming.day01CreateObject.CreateObjectUserFactory" factory-method="createUser"></bean>
-	 * ´´½¨·½Ê½3:ÊµÀı¹¤³§´´½¨·½Ê½£¨¹¤³§·½·¨Ã»ÓĞ¾²Ì¬£©
-	 * µ÷ÓÃCreateObjectUserFactory¶ÔÏóµÄCreateObjectUserFactory´´½¨¶ÔÏó
+	 * åˆ›å»ºæ–¹å¼3:å®ä¾‹å·¥å‚åˆ›å»ºæ–¹å¼ï¼ˆå·¥å‚æ–¹æ³•æ²¡æœ‰é™æ€ï¼‰
+	 * è°ƒç”¨CreateObjectUserFactoryå¯¹è±¡çš„CreateObjectUserFactoryåˆ›å»ºå¯¹è±¡
 	 * <bean id="CreateObjectUserFactoryStatic" factory-bean="CreateObjectUserFactory" factory-method="createUser1"></bean>
 		<bean id="CreateObjectUserFactory" class="com.ming.day02CreateObject.CreateObjectUserFactory"></bean>
 	 * */
@@ -19,11 +19,11 @@ public class CreateObject01 {
 	public void testMehtod() {
 		//applicationContext 
 		ApplicationContext ac = new ClassPathXmlApplicationContext("ApplicationContext.xml");
-		//´´½¨·½Ê½1:¿Õ²Î¹¹Ôì
+		//åˆ›å»ºæ–¹å¼1:ç©ºå‚æ„é€ 
 		System.out.println(ac.getBean("CreateObjectUser"));
-		//´´½¨·½Ê½2:¾²Ì¬¹¤³§·½Ê½
+		//åˆ›å»ºæ–¹å¼2:é™æ€å·¥å‚æ–¹å¼
 		System.out.println(ac.getBean("CreateObjectUserFactoryStatic"));
-		//´´½¨·½Ê½3:ÊµÀı¹¤³§·½Ê½
+		//åˆ›å»ºæ–¹å¼3:å®ä¾‹å·¥å‚æ–¹å¼
 		System.out.println(ac.getBean("CreateObjectUserFactoryTrue"));
 	}
 }

@@ -7,12 +7,12 @@ public class User03Scope {
 		return "User []"+this.hashCode();
 	}
 	public User03Scope() {
-		System.out.println("User03ScopeµÄ¿Õ²Î¹¹Ôì");
+		System.out.println("User03Scopeçš„ç©ºå‚æ„é€ ");
 	}
 	public void init() {
-		System.out.println("ÎÒÊÇ³õÊ¼»¯·½·¨");
+		System.out.println("æˆ‘æ˜¯åˆå§‹åŒ–æ–¹æ³•");
 	}
 	public void destroy() {
-		System.out.println("ÎÒÊÇÏú»Ù·½·¨");
+		System.out.println("æˆ‘æ˜¯é”€æ¯æ–¹æ³•");
 	} 
 }

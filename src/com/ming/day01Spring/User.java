@@ -2,7 +2,7 @@ package com.ming.day01Spring;
 
 public class User {
 	static {
-		System.out.println("¾²Ì¬´úÂë¿é");
+		System.out.println("é™æ€ä»£ç å—");
 	}
 	private String nameString;
 	private int age;

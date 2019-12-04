@@ -2,11 +2,11 @@ package com.ming.day02CreateObject;
 
 public class CreateObjectUserFactory {
 	public static CreateObjectUser createUser() {
-		System.out.println("静态工厂创建CreateObjectUser");
+		System.out.println("闈欐�佸伐鍘傚垱寤篊reateObjectUser");
 		return new CreateObjectUser();
 	}
 	public CreateObjectUser createUser1() {
-		System.out.println("实例工厂创建CreateObjectUser");
+		System.out.println("瀹炰緥宸ュ巶鍒涘缓CreateObjectUser");
 		return new CreateObjectUser();
 	}
 }

@@ -5,18 +5,18 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Day05SpringDI {
-	//springµÄÊôĞÔ×¢Èë
-	/*1.set·½·¨×¢Èë
-	 * 		ÊıÖµÀàĞÍµÄ×¢Èë:
+	//springçš„å±æ€§æ³¨å…¥
+	/*1.setæ–¹æ³•æ³¨å…¥
+	 * 		æ•°å€¼ç±»å‹çš„æ³¨å…¥:
 	 * 		<bean name="Userday05" class="">
     			<property name="nameString" value="Tomcat"></property>
     			<property name="age" value="19"></property>
     		</bean>
-    		ÒıÓÃÀàµÄ×¢Èë
+    		å¼•ç”¨ç±»çš„æ³¨å…¥
     		
-	 *2.¹¹Ôìº¯Êı×¢Èë
-	 *3.pÃû³Æ¿Õ¼ä×¢Èë
-	 *4.spel×¢Èë
+	 *2.æ„é€ å‡½æ•°æ³¨å…¥
+	 *3.påç§°ç©ºé—´æ³¨å…¥
+	 *4.spelæ³¨å…¥
 	 * */
 	@Test
 	public void Test05() {

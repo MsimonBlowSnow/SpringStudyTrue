@@ -1,9 +1,9 @@
 package com.ming.day04import;
 
 public class Import04 {
-	//Ä£¿é»¯ÅäÖÃ
-	/*	Ê¹ÓÃimport¿ÉÒÔµ¹ÈëÆäËûµÄspringÅäÖÃÎÄ¼ş
-	 * Â·¾¶ÎªÀàÂ·¾¶(srcÏÂÃæ)
+	//æ¨¡å—åŒ–é…ç½®
+	/*	ä½¿ç”¨importå¯ä»¥å€’å…¥å…¶ä»–çš„springé…ç½®æ–‡ä»¶
+	 * è·¯å¾„ä¸ºç±»è·¯å¾„(srcä¸‹é¢)
 	<import resource="ApplicationContext.xml"/>
 	 * 
 	 * */
