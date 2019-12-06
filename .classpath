@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-12">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-12.0.2">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
@@ -13,5 +13,12 @@
 	<classpathentry kind="lib" path="/opt/spring/spring-framework-4.3.4.RELEASE/libs/spring-context-4.3.4.RELEASE.jar"/>
 	<classpathentry kind="lib" path="/opt/spring/spring-framework-4.3.4.RELEASE/libs/spring-beans-4.3.4.RELEASE.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="lib" path="/opt/spring/spring-framework-4.3.4.RELEASE/libs/spring-aop-4.3.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/home/ming/tomcat9.0/apache-tomcat-9.0.27/lib/annotations-api.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="https://javaee.github.io/javaee-spec/javadocs/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/opt/spring/spring-framework-4.3.4.RELEASE/libs/spring-test-4.3.4.RELEASE.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns:p="http://www.springframework.org/schema/p" 
+		xmlns:context="http://www.springframework.org/schema/context" 
+		xmlns:aop="http://www.springframework.org/schema/aop" 
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans.xsd 
+							http://www.springframework.org/schema/context 
+							http://www.springframework.org/schema/context/spring-context-4.3.xsd 
+							http://www.springframework.org/schema/aop 
+							http://www.springframework.org/schema/aop/spring-aop-4.3.xsd ">
+ 					
+<context:component-scan base-package="com.ming.day06note"></context:component-scan>
+ <!--扫描注解配置的内容-->
+ <context:annotation-config />
+	<bean name="car062" class="com.ming.day06note.Car06">
+		<property name="colorString" value="black"></property>
+		<property name="branchString" value="12路公交车"></property>
+	</bean>
+</beans>

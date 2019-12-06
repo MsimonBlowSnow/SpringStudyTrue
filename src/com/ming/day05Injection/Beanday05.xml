@@ -1,10 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
     xsi:schemaLocation="http://www.springframework.org/schema/beans 
     					http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean name="Userday05" class="com.ming.day05Injection.User05">
     	<property name="nameString" value="Tomcat"></property>
     	<property name="age" value="19"></property>
+    	<property name="car05" ref="car05"></property>
     </bean>
+    <bean name="car05" class="com.ming.day05Injection.Car05">
+    	<property name="color" value="red"></property>
+    	<property name="branch" value="11路公交车"></property>
+    </bean>
+    <!--  构造函数注入-->
+    <bean name="User05Con" class="com.ming.day05Injection.User05">
+    	<constructor-arg name="age" value="19"></constructor-arg>
+    	<constructor-arg name="nameString" value="Tom"></constructor-arg>
+    	<constructor-arg name="car05" ref="Car05Con" type="com.ming.day05Injection.Car05"></constructor-arg>
+    </bean>
+    <bean name="Car05Con" class="com.ming.day05Injection.Car05">
+    	<constructor-arg name="color" value="red" index="0" type="java.lang.String"></constructor-arg>
+    	<constructor-arg name="branch" value="自行车" index="1"></constructor-arg>
+    </bean>
+    <!-- p命名空间注入-->
+    <bean name="User05P" class="com.ming.day05Injection.User05" p:age="18" p:car05-ref="CarP" p:nameString="ming"></bean>
+    <bean name="CarP" class="com.ming.day05Injection.Car05">
+    	<property name="color" value="red"></property>
+    	<property name="branch" value="马车"></property>
+    </bean>
+    <!--apel注入-->
+    <bean name="UserSpel" class="com.ming.day05Injection.User05">
+    	<property name="car05" ref="CarP"></property>
+    	<property name="nameString" value="#{User05Con.nameString}"></property>
+    	<property name="age" value="#{User05Con.age}"></property>
+    </bean>
+    <!-- 复杂类型注入 -->
+    	<!-- array注入 -->
+    	<bean name="arrayInjectionOne" class="com.ming.day05Injection.Day05ComplexInjection">
+    		<!--如果数组中只有一个值，直接使用ref|value即可-->
+    		<property name="arr" value="tom"></property>
+    	</bean>
+    	<bean name="arrayInjectionMany" class="com.ming.day05Injection.Day05ComplexInjection">
+    		<!-- 如果有多个值 -->
+    		<property name="arr">
+    			<array>
+    				<value>张三</value>
+    				<value>李四</value>
+    				<value>王二</value>
+    				<value>麻子</value>
+    				<ref bean="UserSpel"/>
+    			</array>
+    		</property>
+    	</bean>
+    	<!-- list注入 -->
+    		<!-- 如果list只有一个值 -->
+    		<bean name="ListInJectionOne" class="com.ming.day05Injection.Day05ComplexInjection">
+				<!-- 如果list只有一个值,使用value|ref注入-->	
+				<property name="list" value="mmp"></property>    		
+    		</bean>
+    		<bean name="ListInJectionMany" class="com.ming.day05Injection.Day05ComplexInjection">
+    			<!--list有多个值-->
+    			<property name="list">
+    				<list>
+    					<value>mmp1</value>
+    					<value>mmp2</value>
+    					<value>mmp3</value>
+    					<value>mmp4</value>
+    					<ref bean="UserSpel"/>
+    				</list>
+    			</property>
+    		</bean>
+    		<!-- map注入 -->
+    		<bean name = "MapInJection" class="com.ming.day05Injection.Day05ComplexInjection">
+    			<property name="map">
+    				<map>
+    					<entry key="张三" value = "mmp0"></entry>
+    					<entry key="张三1" value = "mmp1"></entry>
+    					<entry key="user" value-ref= "UserSpel"></entry>
+    					<entry key-ref="User05Con"  value-ref="Userday05"></entry>
+    				</map>
+    			</property>
+    		</bean>
+    		<!--prototype注入-->
+    		<bean name="PrototypeInJection" class="com.ming.day05Injection.Day05ComplexInjection">
+    			<property name="prop">
+    				<props>
+    					<prop key="driverClass">com.ming.text</prop>
+    					<prop key="userName">root</prop>
+    					<prop key="password">123456</prop>
+    				</props>
+    			</property>
+    		</bean>
 </beans>
